@@ -1,0 +1,5 @@
+live_config_reload = true
+
+[font]
+normal.family = "Iosevka Term"
+size = 20.0
