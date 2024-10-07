@@ -1,4 +1,5 @@
-(load-file "~/emacs-config/emacs-pm/emacs-pm.el")
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
 (setq warning-minimum-level :errors)
@@ -6,13 +7,13 @@
 ;;(pm/require-theme 'kanagawa)
 ;;(load-theme 'kanagawa-wave t)
 
-
-(pm/require-theme 'atom-one-dark)
-(load-theme 'atom-one-dark t)
+(use-package atom-one-dark-theme
+  :ensure t
+  :config (load-theme 'atom-one-dark t))
 
 (setq backup-directory-alist '(("" . "~/.emacs.d/emacs_backups")))
 
-(setq custom-file "~/emacs-config/emacs-custom.el")
+(setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 
 (setq inhibit-startup-screen t)
@@ -24,19 +25,23 @@
 (global-display-line-numbers-mode 1)
 (setq-default display-line-numbers-type 'relative)
 
-(ido-mode 1)
+(fido-mode 1)
+(fido-vertical-mode 1)
 
 (add-to-list 'default-frame-alist '(font . "Iosevka-18" ))
 
-(pm/require 'magit)
+(use-package magit
+  :ensure t)
 
-(pm/require 'typescript-mode)
-(pm/require 'json-mode)
-(pm/require 'rjsx-mode)
+(use-package typescript-mode
+  :ensure t)
+(use-package json-mode
+  :ensure t)
+(use-package rjsx-mode
+  :ensure t)
 
 ;;(global-whitespace-mode 1)
 ;;(setq  whitespace-toggle-options '(trailing))
-
 
 (setq-default indent-tabs-mode nil)
 (setq typescript-indent-level 2)
