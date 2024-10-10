@@ -21,7 +21,7 @@ set $term alacritty
 set $menu dmenu_path | wofi --show drun | xargs swaymsg exec --
 
 # Font
-font Ioseveka 12
+font Jetbrains Mono 12
 
 ### Output configuration
 #
