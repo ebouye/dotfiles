@@ -1,0 +1,6 @@
+auto-save-list/
+.dap*
+eln-cache/
+elpa/
+.lsp*
+transient/
