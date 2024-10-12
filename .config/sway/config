@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -26,7 +26,7 @@ font Jetbrains Mono 12
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/eliphaz/Pictures/wallpapers/wall2.jpg fill
 #
 # Example configuration:
 #
@@ -203,6 +203,17 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+exec_always {
+  gsettings set org.gnome.desktop.interface gtk-theme "Arc-Dark"
+  gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+  gsettings set org.gnome.desktop.interface cursor-theme "Breeze-Light"
+}
+
+# Volumes
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +3%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -3%
 
 #
 # Status Bar:
