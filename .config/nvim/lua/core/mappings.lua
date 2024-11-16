@@ -1,9 +1,24 @@
 local bind = vim.keymap.set
 
 bind("n", "<leader>fe", ":Ex<CR>")
-
 bind("n", "<leader>d", ":bdelete<CR>")
+bind("n", "<Esc><Esc>", ":nohlsearch<CR>")
 
+-- move in tab
+bind("n", "<C-Left>", ':bprevious<CR>')
+bind("n", "<C-Right>", ':bnext<CR>')
+bind("n", "<C-h>", ':bprevious<CR>')
+bind("n", "<C-l>", ':bnext<CR>')
+
+-- move in split
+bind("n", "<M-Down>", '<C-W><C-J>')
+bind("n", "<M-Up>", '<C-W><C-K>')
+bind("n", "<M-Left>", '<C-W><C-H>')
+bind("n", "<M-Right>", '<C-W><C-L>')
+bind("n", "<M-J>", '<C-W><C-J>')
+bind("n", "<M-k>", '<C-W><C-K>')
+bind("n", "<M-h>", '<C-W><C-H>')
+bind("n", "<M-l>", '<C-W><C-L>')
 
 -- LSP AutoCMD
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -41,6 +56,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
             bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
         end
         if client.supports_method('textDocument/diagnostic') then
+            bufmap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.open_float()<cr>')
+            bufmap('n', '<leader>a', '<cmd>lua vim.lsp.diagnostic.setloclist()<cr>')
             bufmap('n', 'gl', '<cmd>lua vim.lsp.diagnostic.open_float()<cr>')
             bufmap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>')
             bufmap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>')
@@ -50,10 +67,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.api.nvim_create_autocmd('BufWritePre', {
                 buffer = args.buf,
                 callback = function()
-                    vim.lsp.buf.format({bufnr = args.buf, id = client.id})
+                    vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
                 end
             })
         end
     end
 })
-

@@ -1,5 +1,7 @@
-live_config_reload = true
 
 [font]
 normal.family = "Jetbrains Mono"
-size = 18.0
+size = 16.0
+
+[general]
+live_config_reload = true
