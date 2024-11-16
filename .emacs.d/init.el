@@ -18,14 +18,18 @@
 
 (setq-default indent-tabs-mode nil)
 
-(add-hook 'prog-mode-hook 'hl-line-mode)
+;; (add-hook 'prog-mode-hook 'hl-line-mode)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/junio-theme.el")
-(load-theme 'modus-vivendi t)
+(use-package tangotango-theme
+  :ensure t
+  :config
+  (load-theme 'tangotango t))
+
 
 (add-to-list 'default-frame-alist
              '(font . "Jetbrains Mono-18"))
@@ -63,7 +67,7 @@
   :init
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   (setq lsp-keymap-prefix "C-c l")
-  :hook (((typescript-mode javascript-mode php-mode) . lsp-deferred))
+  :hook (((typescript-mode javascript-mode php-mode csharp-mode) . lsp-deferred))
   :commands lsp-deferred
   :config
   (setq gc-cons-threshold 100000000) ;; for lsp performance
@@ -83,3 +87,6 @@
   :config (setq company-minimum-prefix-length 1
       company-idle-delay 0.0) ;; default is 0.2
   )
+
+(use-package web-mode
+  :ensure t)
