@@ -216,7 +216,7 @@ bindsym $mod+r mode "resize"
 exec_always {
   gsettings set org.gnome.desktop.interface gtk-theme "Arc-Dark"
   gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
-  gsettings set org.gnome.desktop.interface cursor-theme "Redglass"
+  gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Modern-Ice"
 }
 
 # Volumes
@@ -224,11 +224,26 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +3%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -3%
 
+smart_gaps on
+gaps inner 3
+# gaps outer 3
+
+#
+#No titlebars
+#
+smart_borders on
+for_window [class=".*"] border pixel 2
+default_border pixel 3
+
+client.focused #E72929 #E72929 #FFFFFF #E72929
+
+
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+    swaybar_command waybar
     position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
