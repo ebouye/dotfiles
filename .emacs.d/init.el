@@ -79,6 +79,13 @@
   :commands lsp-ui-mode
   :config (setq lsp-idle-delay 0.500))
 
+(use-package lsp-pyright
+  :ensure t
+  :custom (lsp-pyright-langserver-command "pyright") ;; or basedpyright
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp-deferred))))  ; or lsp-deferred
+
 (use-package dap-mode
   :ensure t)
 
