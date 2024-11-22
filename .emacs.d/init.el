@@ -97,3 +97,6 @@
 
 (use-package web-mode
   :ensure t)
+
+(use-package rjsx-mode
+  :ensure t)
