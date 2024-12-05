@@ -19,6 +19,8 @@ vim.opt.linebreak = true
 
 vim.opt.hidden = true
 
+vim.opt.undofile = true
+
 vim.api.nvim_create_autocmd('FileType', {
     pattern = { 'js', 'ts', 'tsx', 'jsx' },
     callback = function()
