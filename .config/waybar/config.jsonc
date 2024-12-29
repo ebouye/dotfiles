@@ -7,6 +7,7 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
+        "hyprland/workspaces",
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
@@ -47,6 +48,21 @@
              "default": ""
          }
      },
+     "hyprland/workspaces": {
+        "format": "{name}: {icon}",
+        "format-icons": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "active": "",
+          "default": ""
+        },
+        "persistent-workspaces": {
+          "*": [ 1,2,3 ] // 5 workspaces by default on every monitor
+        }
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,

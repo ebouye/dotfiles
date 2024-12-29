@@ -1,7 +1,10 @@
 
 [font]
-normal.family = "Jetbrains Mono"
+normal.family = "JetBrainsMonoNL NFP"
 size = 16.0
 
 [general]
 live_config_reload = true
+import = [
+    "~/.config/alacritty/themes/themes/hyper.toml"
+]
