@@ -1,6 +1,7 @@
 local bind = vim.keymap.set
 
-bind("n", "<leader>fe", ":Ex<CR>")
+-- bind("n", "<leader>fe", ":Ex<CR>")
+bind("n", "<leader>fe", ":Oil<CR>")
 bind("n", "<leader>d", ":bdelete<CR>")
 bind("n", "<Esc><Esc>", ":nohlsearch<CR>")
 
@@ -49,3 +50,4 @@ bind('n', ']d', vim.diagnostic.goto_next)
 --    --})
 --  end
 --})
+

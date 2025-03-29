@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-    local servers = { "pyright", "ts_ls", "lua_ls", "jdtls", "intelephense" }
+    local servers = { "pyright", "ts_ls", "lua_ls", "jdtls", "intelephense", "emmet_ls" }
 
     require("mason").setup()
     require("mason-lspconfig").setup {
