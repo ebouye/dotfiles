@@ -25,14 +25,15 @@
 (scroll-bar-mode -1)
 
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/junio-theme.el")
-(use-package tangotango-theme
+
+(use-package catppuccin-theme
   :ensure t
   :config
-  (load-theme 'tangotango t))
-
+  (setq catppuccin-flavor 'mocha) ; or 'latte, 'macchiato, or 'mocha
+  (catppuccin-reload))
 
 (add-to-list 'default-frame-alist
-             '(font . "Jetbrains Mono-18"))
+             '(font . "Jetbrains Mono-13"))
 
 (use-package flycheck
   :ensure t
