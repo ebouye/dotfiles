@@ -35,6 +35,10 @@
 (add-to-list 'default-frame-alist
              '(font . "Jetbrains Mono-13"))
 
+;; Background transparent
+(set-frame-parameter nil 'alpha-background 80)
+(add-to-list 'default-frame-alist '(alpha-background . 80))
+
 (use-package flycheck
   :ensure t
   :config
