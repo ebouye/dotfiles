@@ -7,14 +7,14 @@
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod1
+set $mod Mod4
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -26,7 +26,7 @@ font Jetbrains Mono 12
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/eliphaz/Pictures/Wallpapers/0ae26t0bvxke1.jpeg fill
+output * bg /home/sophonie/Pictures/Wallpapers/i1ong1fwrvoe1.png fill
 #
 # Example configuration:
 #
@@ -73,7 +73,7 @@ input type:keyboard {
   # Capslock key should work as escape key
   # See /usr/share/X11/xkb/rules/xorg.lst for options
   xkb_layout us
-  xkb_variant dvorak
+  # xkb_variant dvorak
   xkb_options caps:escape
   # xkb_options :escape
 }

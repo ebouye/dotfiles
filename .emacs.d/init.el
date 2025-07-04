@@ -8,7 +8,7 @@
 (setq backup-directory-alist `(("." . "~/.backup-emacs")))
 
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(setq-default display-line-numbers-style 'relative)
+(setq-default display-line-numbers-type 'relative)
 
 
 (fido-mode)
@@ -33,11 +33,11 @@
   (catppuccin-reload))
 
 (add-to-list 'default-frame-alist
-             '(font . "Jetbrains Mono-13"))
+             '(font . "Iosevka Term-18"))
 
 ;; Background transparent
-(set-frame-parameter nil 'alpha-background 80)
-(add-to-list 'default-frame-alist '(alpha-background . 80))
+;; (set-frame-parameter nil 'alpha-background 80)
+;; (add-to-list 'default-frame-alist '(alpha-background . 80))
 
 (use-package flycheck
   :ensure t
@@ -96,7 +96,11 @@
 
 (use-package company
   :ensure t
-  :config (setq company-minimum-prefix-length 1
+  :commands company-mode
+  :init
+  (add-hook 'prog-mode-hook #'company-mode)
+  :config
+  (setq company-minimum-prefix-length 1
       company-idle-delay 0.0) ;; default is 0.2
   )
 

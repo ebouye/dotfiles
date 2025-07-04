@@ -1,0 +1,3 @@
+[submodule ".config/nvim/lua/tree-sitter-blade"]
+	path = .config/nvim/lua/tree-sitter-blade
+	url = https://github.com/EmranMR/tree-sitter-blade
